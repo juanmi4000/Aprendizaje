@@ -1,0 +1,26 @@
+#!/usr/bin/env php
+<?php
+
+/* php artisan make:model nombre-modelo -m => esto sirve para crear un modelo y tener una relacion entre nuestras tablas y el modelo */
+/* php artisan make:controller nombre-controlador => esto sirve para crear un controlador */
+/* php artisan make:controller nombre-controlador --resource => esto sirve para crear un controlador pero todo el CRUD lo hace solo, osea Crear, Leer, Actualizar y Eliminar */
+/* php artisan route:list => esto sirve para mostrar todas las rutas */
+/* php artisan migrate => esto sirve para crear las tablas de la base de datos que se encuentra en database/migrations y no han sido corridas aún*/
+/* php artisan migrate:status => esto sirve para mostrar las tablas que se encuentran en la base de datos y las han sido corridas */
+/* php artisan maigrate:rollback => esto sirve para revertir la ultima migracion */
+/* php artisan make:migration nombre_migracion => esto sirve para crear una migracion */
+/* php artisan make:controller */
+
+/* Artisan es una línea de comando para trabajar con Laravel */
+use Symfony\Component\Console\Input\ArgvInput;
+
+define('LARAVEL_START', microtime(true));
+
+// Register the Composer autoloader...
+require __DIR__.'/vendor/autoload.php';
+
+// Bootstrap Laravel and handle the command...
+$status = (require_once __DIR__.'/bootstrap/app.php')
+    ->handleCommand(new ArgvInput);
+
+exit($status);
