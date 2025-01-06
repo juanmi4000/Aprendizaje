@@ -1,0 +1,17 @@
+{% extends 'layouts/base.html' %}
+
+{% block content %}
+<h1>Create a new task</h1>
+<!-- <input type="text">
+<textarea name="description" id="" cols="30" rows="10"></textarea> -->
+
+<form method="POST">
+  {# as_p lo que hace es meter cada conjunto de elementos (label and input) dentro de una etiqueta p #}
+
+  {% csrf_token %} {# Se utiliza por seguridad #}
+  {{ form.as_p }} 
+
+  {# Cuando pulso en el botón submit, lo que hace es enviar los datos a la misma página. Por lo tanto, hace una llamada al endpoint donde se encuentra el formulario #}
+  <input type="submit" value="Crear tarea">
+</form>
+{% endblock %}

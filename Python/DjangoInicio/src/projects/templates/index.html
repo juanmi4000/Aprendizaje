@@ -1,0 +1,13 @@
+{% extends 'layouts/base.html' %}
+
+{# le indicamos que vamos a cargar contenido estático #}
+{% load static %}
+
+{% block content %}
+<h1>Welcome to django examples</h1>
+{# Asi se carga una imagen estática #}
+<img src="{% static 'citlali.png' %}" alt="Imagen randon" width="600" height="300">
+<h2>{{ title }}</h2>
+<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Aperiam quaerat necessitatibus, fugiat at illum architecto, inventore dolore laudantium ratione unde blanditiis voluptas consectetur officiis corrupti quos ipsam fuga laboriosam dolorum.</p>
+
+{% endblock %}
